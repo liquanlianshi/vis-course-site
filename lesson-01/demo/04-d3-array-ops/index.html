@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>Demo 4 · D3 8 个数组函数</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <!-- d3 本地提供（原为 cdn.jsdelivr.net，部分网络下不可达） -->
+  <script src="../../../assets/vendor/d3.v7.min.js"></script>
+</head>
+<body>
+  <a href="../index.html">← 返回导航</a>
+  <h1>Demo 4 · D3 8 个数组函数</h1>
+  <p>
+    对应讲义章节 <span class="tag">3.4 数据变换</span>。本 demo 把用户原文列出的 8 个函数
+    （map / reduce / cross / merge / pairs / transpose / zip / filter）逐个可视化对比，
+    右侧展示新生数据的真实用法。
+  </p>
+
+  <div class="demo-nav">
+    <div class="panel-title">选择函数查看</div>
+    <div class="controls">
+      <label>函数：
+        <select id="fn-select">
+          <option value="map">map</option>
+          <option value="reduce">reduce</option>
+          <option value="cross">cross</option>
+          <option value="merge">merge</option>
+          <option value="pairs">pairs</option>
+          <option value="transpose">transpose</option>
+          <option value="zip">zip</option>
+          <option value="filter">filter</option>
+        </select>
+      </label>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">函数说明</div>
+    <div id="fn-desc"></div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">输入 → 输出</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+      <div>
+        <h3 style="font-size: 13px; color: #64748b; margin-bottom: 8px;">输入</h3>
+        <div class="console" id="fn-input"></div>
+      </div>
+      <div>
+        <h3 style="font-size: 13px; color: #64748b; margin-bottom: 8px;">输出</h3>
+        <div class="console" id="fn-output"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">真实场景（新生数据）</div>
+    <div id="fn-realtime"></div>
+  </div>
+
+  <div class="note">
+    <strong>嵌入理论：</strong>这 8 个函数构成 D3 数据流的核心。
+    它们都是 <strong>函数式 / 不可变</strong>的：输入不变，输出新数组。
+    这与命令式 array.forEach 形成对比 —— 函数式风格天然支持数据流并行化与可测试性。
+  </div>
+
+  <script src="../../../assets/data/offline-data.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>

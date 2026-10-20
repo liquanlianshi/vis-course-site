@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>Demo 2 · DIKW 金字塔</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <!-- d3 本地提供（原为 cdn.jsdelivr.net，部分网络下不可达） -->
+  <script src="../../../assets/vendor/d3.v7.min.js"></script>
+</head>
+<body>
+  <a href="../index.html">← 返回导航</a>
+  <h1>Demo 2 · DIKW 金字塔</h1>
+  <p>
+    对应讲义章节 <span class="tag">3.2 数据定义</span>。本 demo 把"数据 → 信息 → 知识 → 智慧"的金字塔可视化，
+    鼠标悬停/点击任一层，右侧会显示该层的定义、典型数据与可视化方式。
+  </p>
+
+  <div class="demo-nav">
+    <div class="panel-title">可视化在 DIKW 中的位置</div>
+    <p style="font-size: 13px; color: #475569;">
+      数据可视化主要把 <strong>Data 升到 Information</strong>（部分场景能升到 Knowledge），但难以跨越到 Wisdom。
+      ——陈为《可视化导论》Ch1 绪论部分
+    </p>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">DIKW 金字塔（点击/悬停层查看详情）</div>
+    <div id="dikw-svg"></div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">当前层级详情</div>
+    <div id="dikw-detail" style="font-size: 14px; color: #334155;">
+      ← 把鼠标移到金字塔上…
+    </div>
+  </div>
+
+  <div class="note">
+    <strong>嵌入理论（陈为 Ch1 拓展）：</strong>Rowley (2007) 指出 DIKW 是过度简化的层次模型——
+    现实中 Data 与 Information 之间的界限往往模糊，知识可以是更结构化的信息。
+    但作为教学脚手架，DIKW 仍然是最常用的概念框架。
+  </div>
+
+  <script src="../../../assets/data/offline-data.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>

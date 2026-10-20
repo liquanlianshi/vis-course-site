@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>补充 Demo 集合 · 《可视化导论》</title>
+  <meta name="description" content="《可视化导论》补充 demo 集合：与课程章节配套的动手练习。" />
+  <link rel="stylesheet" href="../assets/css/tokens.css" />
+  <link rel="stylesheet" href="../assets/css/base.css" />
+  <link rel="stylesheet" href="../assets/css/course.css" />
+  <link rel="stylesheet" href="../assets/css/portal.css" />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+</head>
+<body data-page="supplementary">
+
+  <a class="skip-link" href="#main" data-i18n="a11y.skip">跳到正文</a>
+
+  <nav class="course-topbar" aria-label="顶部导航">
+    <div class="course-topbar__inner">
+      <a class="brand" href="../index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="back" aria-hidden="true">←</span><span data-i18n="nav.home"></span>
+      </a>
+      <div class="topbar-actions"><div id="langSwitchHost"></div></div>
+    </div>
+  </nav>
+
+  <main class="wrap supp-main" id="main">
+    <header class="supp-head">
+      <p class="section-eyebrow" data-i18n="portal.eyebrow.supp"></p>
+      <h1 data-i18n="supp.title"></h1>
+      <p class="supp-tagline" data-i18n="supp.tagline"></p>
+    </header>
+
+    <section class="supp-chapter" id="chapter-1">
+      <h2 data-i18n="supp.ch1"></h2>
+      <p class="supp-hint" data-i18n="supp.hint1"></p>
+      <div class="demos">
+        <a class="demo-card" href="tableshow.html" target="_blank" rel="noopener">
+          <div class="name">tableshow.html</div>
+          <div class="desc">新生数据表格展示（d3.csv → renderTable）</div>
+        </a>
+        <a class="demo-card" href="newstudent.html" target="_blank" rel="noopener">
+          <div class="name">newstudent.html</div>
+          <div class="desc">新生年龄分布饼图（d3.rollup 聚合 + d3.arc）</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="supp-chapter" id="chapter-2">
+      <h2 data-i18n="supp.ch2"></h2>
+      <p class="supp-hint" data-i18n="supp.hint2"></p>
+      <div class="demos">
+        <a class="demo-card" href="treelist.html" target="_blank" rel="noopener">
+          <div class="name">treelist.html</div>
+          <div class="desc">可展开 / 折叠的树形列表（d3-hierarchy + d3.select）</div>
+        </a>
+        <a class="demo-card" href="nssystem.html" target="_blank" rel="noopener">
+          <div class="name">nssystem.html</div>
+          <div class="desc">新生数据管理系统（树 + 表格联动 + 搜索）</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="supp-chapter" id="chapter-3">
+      <h2 data-i18n="supp.ch3"></h2>
+      <p class="supp-hint" data-i18n="supp.hint3"></p>
+      <div class="demos">
+        <a class="demo-card" href="sex_compare.html" target="_blank" rel="noopener">
+          <div class="name">sex_compare.html</div>
+          <div class="desc">性别数据对比条形图（双系列 + 颜色编码）</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="supp-chapter" id="chapter-4">
+      <h2 data-i18n="supp.ch4"></h2>
+      <p class="supp-hint" data-i18n="supp.hint4"></p>
+      <div class="demos">
+        <a class="demo-card" href="crime1985.html" target="_blank" rel="noopener">
+          <div class="name">crime1985.html</div>
+          <div class="desc">1985 美国犯罪数据性别差异（d3-regression 散点）</div>
+        </a>
+        <a class="demo-card" href="regression.html" target="_blank" rel="noopener">
+          <div class="name">regression.html</div>
+          <div class="desc">d3-regression 线性回归最小示例</div>
+        </a>
+        <a class="demo-card" href="colormap.html" target="_blank" rel="noopener">
+          <div class="name">colormap.html</div>
+          <div class="desc">10×10 terrain colormap 热力图（d3.interpolateViridis）</div>
+        </a>
+        <a class="demo-card" href="mark.html" target="_blank" rel="noopener">
+          <div class="name">mark.html</div>
+          <div class="desc">10×10 标记法（按数值大小画方块）</div>
+        </a>
+        <a class="demo-card" href="contour.html" target="_blank" rel="noopener">
+          <div class="name">contour.html</div>
+          <div class="desc">移动四边形法等值线提取（自实现 Marching Squares）</div>
+        </a>
+        <a class="demo-card" href="contourd3.html" target="_blank" rel="noopener">
+          <div class="name">contourd3.html</div>
+          <div class="desc">D3 内置 d3-contour 等值线</div>
+        </a>
+      </div>
+    </section>
+
+    <section class="supp-chapter" id="chapter-5">
+      <h2 data-i18n="supp.ch5"></h2>
+      <p class="supp-hint" data-i18n="supp.hint5"></p>
+      <div class="demos">
+        <a class="demo-card" href="calendar.html" target="_blank" rel="noopener">
+          <div class="name">calendar.html</div>
+          <div class="desc">2008 螺旋时间轴日历（基础版）</div>
+        </a>
+        <a class="demo-card" href="calendar1.html" target="_blank" rel="noopener">
+          <div class="name">calendar1.html</div>
+          <div class="desc">2008 螺旋时间轴日历（变体 1）</div>
+        </a>
+        <a class="demo-card" href="calendar3.html" target="_blank" rel="noopener">
+          <div class="name">calendar3.html</div>
+          <div class="desc">2008 螺旋时间轴日历（变体 3）</div>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p data-i18n-html="footer.copyright"></p>
+    <p class="footer-meta" data-i18n="footer.meta"></p>
+  </footer>
+
+  <!-- 内嵌课程数据 + 经典脚本包：不用服务器，双击即可打开 -->
+  <script src="../assets/data/offline-data.js"></script>
+  <script src="../assets/js/offline-supplementary.js"></script>
+</body>
+</html>

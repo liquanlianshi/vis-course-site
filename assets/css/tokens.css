@@ -1,0 +1,146 @@
+/* =============================================================
+   tokens.css —— 设计令牌（颜色 / 字体 / 间距 / 圆角 / 阴影 / 层级）
+   全站唯一的取值来源：改一处，全站生效。
+
+   视觉语言与《新质生产力》系列作业保持一致：
+     · 暖白纸感底色 + 六色低饱和光斑
+     · 半透明玻璃面板（blur + 内高光 + 暖灰投影）
+     · 珊瑚陶土色为主色，青绿 / 沙金 / 丁香为辅色
+   ============================================================= */
+:root {
+  /* ---- 主色：陶土珊瑚（替代原来的蓝色）---- */
+  --c-primary: #b4785f;
+  --c-primary-dark: #9d6049;
+  --c-primary-darker: #844b37;
+  --c-primary-soft: #f7eae3;
+  --c-accent: #8f86b8;            /* 丁香紫，用于强调与选中 */
+  --c-accent-soft: #efebf7;
+  --c-accent-soft-2: #ddd5ee;
+
+  /* ---- 分类色板（低饱和、明亮，用于图形与标签）---- */
+  --c-1: #d9a08f;   /* 珊瑚 */
+  --c-2: #7fb0a8;   /* 青绿 */
+  --c-3: #d8c8a8;   /* 沙金 */
+  --c-4: #a9a3ce;   /* 丁香 */
+  --c-5: #d8a8b6;   /* 玫瑰 */
+  --c-6: #a6c48f;   /* 草绿 */
+  --c-7: #9bbbd4;   /* 天蓝 */
+  --c-8: #cba894;   /* 黏土 */
+
+  /* ---- 中性色（暖灰阶）---- */
+  --c-ink: #33302c;
+  --c-text: #3c3833;
+  --c-text-2: #6b645b;
+  --c-text-3: #786f63;
+  --c-muted: #7d7468;
+  --c-faint: #968d81;
+  --c-line: #eae2d6;
+  --c-line-strong: #ddd3c4;
+  --c-bg: #fbf7f1;
+  --c-surface: #ffffff;
+  --c-surface-2: #f7f2ea;
+
+  /* ---- 玻璃质感 ---- */
+  --glass: rgba(255, 255, 255, 0.58);
+  --glass-soft: rgba(255, 255, 255, 0.40);
+  --glass-panel: rgba(255, 255, 255, 0.74);
+  --glass-strong: rgba(255, 255, 255, 0.86);
+  --glass-brd: rgba(255, 255, 255, 0.74);
+  --glass-brd-2: rgba(255, 255, 255, 0.50);
+  --blur: blur(20px) saturate(1.7);
+
+  /* ---- 语义色 ---- */
+  --c-ok: #6f9e77;
+  --c-ok-soft: #edf5ec;
+  --c-warn: #cf9c58;
+  --c-warn-soft: #fbf1df;
+  --c-info: #6e9cb5;
+  --c-info-soft: #eaf3f7;
+  --c-danger: #c06a58;
+  --c-danger-soft: #fbece8;
+
+  /* ---- 代码高亮（暖调深底）---- */
+  --c-code-bg: #2d2a27;
+  --c-code-text: #ece4d9;
+  --c-code-cmt: #948a7d;
+  --c-code-kw: #e3a18f;
+  --c-code-fn: #9fc0d6;
+  --c-code-str: #a9c69b;
+  --c-code-num: #e0c48a;
+  --c-code-op: #d9a06e;
+  --c-code-star: #e0c48a;
+
+  /* ---- 排版 ---- */
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", "Source Han Sans SC", sans-serif;
+  --font-mono: "JetBrains Mono", "Cascadia Mono", "SFMono-Regular", Consolas,
+    "Courier New", monospace;
+
+  --fs-xs: 11.5px;
+  --fs-sm: 12.8px;
+  --fs-base: 14.5px;
+  --fs-md: 15.5px;
+  --fs-lg: 17px;
+  --fs-h2: 24px;
+  --fs-h1: 30px;
+
+  --lh-tight: 1.3;
+  --lh-base: 1.78;
+
+  /* ---- 间距 ---- */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 20px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+  --sp-10: 40px;
+
+  /* ---- 圆角与阴影（暖灰投影，不用冷黑）---- */
+  --r-sm: 8px;
+  --r-md: 12px;
+  --r-lg: 16px;
+  --r-xl: 20px;
+  --r-pill: 999px;
+
+  --shadow-1: 0 1px 2px rgba(70, 60, 48, 0.04), 0 8px 24px -14px rgba(70, 60, 48, 0.16);
+  --shadow-2: 0 2px 6px rgba(70, 60, 48, 0.05), 0 18px 44px -22px rgba(70, 60, 48, 0.30);
+  --shadow-3: 0 10px 40px -12px rgba(70, 60, 48, 0.34);
+  --glass-shadow: 0 2px 6px rgba(70, 60, 48, 0.05),
+    0 20px 52px -24px rgba(70, 60, 48, 0.38);
+  --glass-inset: inset 0 1px 0 rgba(255, 255, 255, 0.92);
+
+  /* ---- 层级 ---- */
+  --z-topbar: 200;
+  --z-outline: 100;
+  --z-modal: 900;
+
+  /* ---- 布局 ---- */
+  --w-page: 1460px;
+  --w-nav: 244px;
+  --w-outline: 208px;
+
+  /* ---- 过渡 ---- */
+  --t-fast: 0.15s ease;
+  --t-base: 0.24s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+/* 不支持 backdrop-filter 时退化为不透明面板，避免浅色文字压在光斑上 */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  :root {
+    --glass: rgba(255, 255, 255, 0.94);
+    --glass-soft: rgba(255, 255, 255, 0.88);
+    --glass-panel: rgba(255, 255, 255, 0.97);
+    --glass-strong: rgba(255, 255, 255, 0.99);
+    --glass-brd: rgba(255, 255, 255, 0.96);
+    --glass-brd-2: rgba(234, 226, 214, 0.92);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --t-fast: 0s;
+    --t-base: 0s;
+  }
+}

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>《可视化导论》课程门户</title>
+  <meta name="description" content="《可视化导论》课程门户 —— 从数据到图表：JavaScript + D3.js 实战课程。中国石油大学（华东）。" />
+  <link rel="stylesheet" href="assets/css/tokens.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/course.css" />
+  <link rel="stylesheet" href="assets/css/widgets.css" />
+  <link rel="stylesheet" href="assets/css/portal.css" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+</head>
+<body data-page="portal">
+
+  <a class="skip-link" href="#chapters" data-i18n="a11y.skip">跳到正文</a>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="hero-tag" data-i18n="portal.hero.tag"></p>
+      <h1 data-i18n="portal.hero.h1"></h1>
+      <p class="hero-subtitle" data-i18n="portal.hero.subtitle"></p>
+      <p class="hero-meta" data-i18n-html="portal.hero.meta"></p>
+      <ul class="hero-chips" aria-hidden="false">
+        <li data-i18n="portal.hero.chip1"></li>
+        <li data-i18n="portal.hero.chip2"></li>
+        <li data-i18n="portal.hero.chip3"></li>
+      </ul>
+      <p class="hero-actions">
+        <a class="btn" id="heroStart" href="lesson-01/index.html" data-i18n="portal.continue.none"></a>
+        <a class="hero-link" href="#chapters" data-i18n="portal.hero.browse"></a>
+      </p>
+    </div>
+  </header>
+
+  <nav class="nav" aria-label="主导航">
+    <div class="nav__inner">
+      <a class="nav-brand" href="index.html">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>
+          <span data-i18n="portal.hero.h1"></span>
+          <small data-i18n="portal.hero.tag"></small>
+        </span>
+      </a>
+      <div class="nav__links">
+        <a href="#chapters" data-i18n="portal.nav.chapters"></a>
+        <a href="#howto" data-i18n="portal.nav.howto"></a>
+        <a href="#about" data-i18n="portal.nav.about"></a>
+      </div>
+      <span class="nav__spacer"></span>
+      <button class="search-trigger" id="searchBtn" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+             stroke-linecap="round" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.2-3.2"></path>
+        </svg>
+        <span class="label" data-i18n="search.label"></span>
+        <kbd>/</kbd>
+      </button>
+      <div id="langSwitchHost"></div>
+    </div>
+  </nav>
+
+  <main class="portal-main">
+    <!-- 学习进度总览 -->
+    <div id="dashboard"></div>
+
+    <section id="chapters" class="section">
+      <p class="section-eyebrow" data-i18n="portal.eyebrow.chapters"></p>
+      <h2><span data-i18n="portal.tagline"></span></h2>
+      <p class="section-lead" data-i18n="portal.intro"></p>
+      <div class="cards" id="cards"></div>
+    </section>
+
+    <section id="howto" class="section">
+      <p class="section-eyebrow" data-i18n="portal.eyebrow.usage"></p>
+      <h2><span data-i18n="portal.section.usage"></span></h2>
+      <div class="howto-grid">
+        <div class="howto-card">
+          <h3 data-i18n="portal.usage.classroom.title"></h3>
+          <p data-i18n="portal.usage.classroom.desc"></p>
+        </div>
+        <div class="howto-card">
+          <h3 data-i18n="portal.usage.student.title"></h3>
+          <p data-i18n="portal.usage.student.desc"></p>
+        </div>
+        <div class="howto-card">
+          <h3 data-i18n="portal.usage.teacher.title"></h3>
+          <p data-i18n="portal.usage.teacher.desc"></p>
+        </div>
+        <div class="howto-card">
+          <h3 data-i18n="portal.usage.lan.title"></h3>
+          <p data-i18n="portal.usage.lan.desc"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <p class="section-eyebrow" data-i18n="portal.eyebrow.about"></p>
+      <h2><span data-i18n="portal.section.about"></span></h2>
+      <div class="about">
+        <div class="about-item">
+          <h4 data-i18n="portal.about.theory"></h4>
+          <p data-i18n="portal.about.theory.desc"></p>
+        </div>
+        <div class="about-item">
+          <h4 data-i18n="portal.about.principle"></h4>
+          <p data-i18n="portal.about.principle.desc"></p>
+        </div>
+        <div class="about-item">
+          <h4 data-i18n="portal.about.stack"></h4>
+          <p data-i18n="portal.about.stack.desc"></p>
+        </div>
+        <div class="about-item">
+          <h4 data-i18n="portal.about.data"></h4>
+          <p data-i18n="portal.about.data.desc"></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="portal-footer">
+    <p data-i18n-html="footer.copyright"></p>
+    <p class="footer-meta" data-i18n="footer.meta"></p>
+  </footer>
+
+  <noscript>
+    <div class="wrap" style="padding:24px 0">
+      <p>本页需要启用 JavaScript 才能渲染课程内容。</p>
+    </div>
+  </noscript>
+
+  <!-- 内嵌课程数据 + 经典脚本包：不用服务器，双击即可打开 -->
+  <script src="assets/data/offline-data.js"></script>
+  <script src="assets/js/offline-portal.js"></script>
+</body>
+</html>

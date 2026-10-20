@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>第 5 章 时序数据可视化 · 《可视化导论》</title>
+  <meta name="description" content="第 5 章 时序数据可视化 —— 《可视化导论》课程（JavaScript + D3.js 实战）。Chapter 5 · Time-Series Visualization" />
+  <link rel="stylesheet" href="../assets/css/tokens.css" />
+  <link rel="stylesheet" href="../assets/css/base.css" />
+  <link rel="stylesheet" href="../assets/css/course.css" />
+  <link rel="stylesheet" href="../assets/css/widgets.css" />
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml" />
+  <!-- d3 本地提供：断网/校园网屏蔽 CDN 时依然可用 -->
+  <script src="../assets/vendor/d3.v7.min.js"></script>
+</head>
+<body data-lesson="lesson-05">
+
+  <div class="read-progress" id="readProgress" role="progressbar"
+       aria-label="阅读进度" aria-valuemin="0" aria-valuemax="100"></div>
+  <a class="skip-link" href="#chapterContent" data-i18n="a11y.skip">跳到正文</a>
+
+  <!-- 顶栏 / 页头 / 目录 / 正文 / 导读 / 上下章 / 页脚：由 lesson-app.js 统一渲染 -->
+  <nav class="course-topbar" id="topbar"></nav>
+  <header class="lesson-header" id="lessonHeader"></header>
+
+  <main class="lesson-main with-outline" id="lessonMain">
+    <aside class="chapter-nav" id="chapterNav"></aside>
+    <section class="chapter-content" id="chapterContent" tabindex="-1">
+      <div class="loading-shell" role="status" aria-live="polite">
+        <span class="sr-only" data-i18n="common.loading">加载中…</span>
+        <span class="sk-line sk-w-40"></span>
+        <span class="sk-line sk-w-72"></span>
+        <span class="sk-line sk-w-90"></span>
+        <span class="sk-block"></span>
+      </div>
+    </section>
+    <aside class="section-outline" id="sectionOutline"></aside>
+  </main>
+
+  <div class="pager-wrap">
+    <div class="chapter-pager" id="chapterPager"></div>
+  </div>
+
+  <footer class="site-footer" id="siteFooter"></footer>
+
+  <noscript>
+    <div class="wrap" style="padding:24px 0">
+      <p class="demo-hint">本页需要启用 JavaScript 才能渲染课程内容。</p>
+    </div>
+  </noscript>
+
+  <!-- 内嵌课程数据 + 经典脚本包：不用服务器，双击即可打开 -->
+  <script src="../assets/data/offline-data.js"></script>
+  <script src="../assets/js/offline-lesson.js"></script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>Demo 5 · selection 三态模型</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <!-- d3 本地提供（原为 cdn.jsdelivr.net，部分网络下不可达） -->
+  <script src="../../../assets/vendor/d3.v7.min.js"></script>
+</head>
+<body>
+  <a href="../index.html">← 返回导航</a>
+  <h1>Demo 5 · D3 Selection 与 enter/update/exit</h1>
+  <p>
+    对应讲义章节 <span class="tag">3.5.1 D3 数据选择器</span>。本 demo 把 D3 最核心的
+    <strong>Data-Join 三态模型</strong>（enter / update / exit）可视化：
+    数据 > 元素 ⇒ 多出来的进入 enter，被替换的留在 update，多余元素进入 exit。
+  </p>
+
+  <div class="demo-nav">
+    <div class="panel-title">select vs selectAll</div>
+    <table>
+      <thead>
+        <tr><th>方法</th><th>返回</th><th>典型用法</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>d3.select("selector")</td><td>单个元素（或 null）</td><td>选中唯一的根元素</td></tr>
+        <tr><td>d3.selectAll("selector")</td><td>多个元素的 selection</td><td>绑定数据数组 → 三态模型</td></tr>
+        <tr><td>selection.select("selector")</td><td>每个选中元素的后代中第一个匹配</td><td>嵌套：父 → 子</td></tr>
+        <tr><td>selection.selectAll("selector")</td><td>每个选中元素的后代中所有匹配</td><td>嵌套：父 → 多个子</td></tr>
+        <tr><td>selection.selectChild()</td><td>直接子元素中的第一个</td><td>DOM 层级</td></tr>
+        <tr><td>selection.selectChildren()</td><td>所有直接子元素</td><td>DOM 层级</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">交互演示 —— enter / update / exit</div>
+    <div class="controls">
+      <button id="btn-add">+ 添加 1 个数据</button>
+      <button id="btn-update">⇆ 全部更新（×2）</button>
+      <button id="btn-remove">− 删除 1 个数据</button>
+      <button id="btn-reset">重置</button>
+    </div>
+    <p style="font-size:13px; color:#475569;">
+      当前数据：<code id="data-state">[1, 2, 3]</code>（N=3） · 元素：<code id="el-state">3</code> 个
+    </p>
+    <svg id="states" style="width:100%; height:160px;"></svg>
+    <div class="legend" style="margin-top:8px;">
+      <span class="tag green">绿色 = enter（新增元素）</span>
+      <span class="tag cyan">蓝色 = update（更新现有）</span>
+      <span class="tag red">红色 = exit（待移除）</span>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">核心代码</div>
+    <div class="console">const circles = svg.selectAll("circle")
+  .data(currentData)
+  .join(
+    enter => enter.append("circle")
+      .attr("fill", "green"),
+    update => update.attr("fill", "cyan"),
+    exit => exit.remove()
+  );</div>
+  </div>
+
+  <div class="note">
+    <strong>嵌入理论：</strong>D3 的 Data-Join 是 Mike Bostock 提出的声明式数据绑定模型。
+    与命令式 DOM 操作相比，三态模型的优势：
+    (1) 增量更新而非全量重绘 → 性能好；(2) 元素身份稳定 → 过渡动画自然；
+    (3) 与函数式数据流天然契合 → 易于推理。
+  </div>
+
+  <script src="../../../assets/data/offline-data.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>

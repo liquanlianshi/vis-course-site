@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>Demo 1 · D3 数据加载器</title>
+  <link rel="stylesheet" href="../styles.css" />
+  <!-- d3 本地提供（原为 cdn.jsdelivr.net，部分网络下不可达） -->
+  <script src="../../../assets/vendor/d3.v7.min.js"></script>
+</head>
+<body>
+  <a href="../index.html">← 返回导航</a>
+  <h1>Demo 1 · D3 数据加载器</h1>
+  <p>
+    对应讲义章节 <span class="tag">3.5 D3 数据选择器</span>。本 demo 演示
+    <strong>异步加载 CSV</strong>、<strong>字段名映射</strong>（中文 → 英文）和
+    <strong>类型转换</strong>（字符串 → Number / Date）的完整流程。
+  </p>
+
+  <div class="demo-nav">
+    <div class="panel-title">3.1 数据加载与转换（推荐方式：分离 row 函数）</div>
+    <p style="font-size: 13px; color: #475569; margin-bottom: 8px;">
+      数据文件：<code>../data/newstudent.csv</code> · 共 <span id="row-count">…</span> 行
+    </p>
+    <div class="controls">
+      <button id="btn-reload">重新加载</button>
+      <span class="legend">点击按钮 → 观察控制台输出 + 下方表格</span>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">Console 输出</div>
+    <div class="console" id="console">点击「重新加载」查看输出…</div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">转换后的数据（前 10 行）</div>
+    <div id="table-container">加载中…</div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">字段映射对照</div>
+    <table id="mapping-table">
+      <thead>
+        <tr><th>CSV 中文列名</th><th>JS 变量名（英文）</th><th>类型</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>关键点：</strong>用户原文指出 "中文部分是 csv 文件中的列名称，但在后继程序处理中，英文变量可以避免语法问题"——
+    通过 <code>transformRow</code> 函数把中文键映射到英文，并把数值/时间字段从字符串转换为 Number / Date 类型。
+  </div>
+
+  <script src="../../../assets/data/offline-data.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>

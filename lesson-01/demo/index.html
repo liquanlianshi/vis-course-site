@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>Doc-01 数据 · Demo 总览</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <h1>Doc-01 数据 · 5 个可独立运行的 Demo</h1>
+  <p>
+    对应讲义章节：<strong>3.1 数据加载 → 3.2 数据定义 → 3.3 数据属性 → 3.4 数据变换 → 3.5 D3 数据选择器</strong>
+  </p>
+
+  <div class="demo-nav">
+    <div class="panel-title">5 个 Demo 导航</div>
+    <ul>
+      <li><a href="./01-data-loader/index.html">
+        <strong>1 · D3 数据加载器</strong><br/>
+        <span class="demo-desc">异步加载 CSV · 字段名映射 · 类型转换回调</span>
+      </a></li>
+      <li><a href="./02-dikw-pyramid/index.html">
+        <strong>2 · DIKW 金字塔</strong><br/>
+        <span class="demo-desc">数据 → 信息 → 知识 → 智慧，hover 查看详情</span>
+      </a></li>
+      <li><a href="./03-attribute-types/index.html">
+        <strong>3 · 属性类型 × 视觉通道</strong><br/>
+        <span class="demo-desc">Stevens 测量尺度 × Mackinlay 1986 通道排序</span>
+      </a></li>
+      <li><a href="./04-d3-array-ops/index.html">
+        <strong>4 · D3 8 个数组函数</strong><br/>
+        <span class="demo-desc">map / reduce / cross / merge / pairs / transpose / zip / filter</span>
+      </a></li>
+      <li><a href="./05-selectors/index.html">
+        <strong>5 · Selection 三态模型</strong><br/>
+        <span class="demo-desc">enter / update / exit —— Data-Join 核心</span>
+      </a></li>
+    </ul>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">运行方式</div>
+    <p>直接双击上面任意一个 demo 的 <code>index.html</code> 即可，<strong>不需要服务器</strong>。</p>
+    <p>
+      课程数据已内嵌到 <code>assets/data/offline-data.js</code>，D3 也用的是本地
+      <code>assets/vendor/</code> 文件，断网、无 Python 环境时同样能跑。
+    </p>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">嵌入理论一览（陈为《可视化导论》）</div>
+    <table>
+      <thead>
+        <tr><th>你的章节</th><th>嵌入的陈为理论</th><th>所在 Demo</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>3.1 数据生成（DeepSeek 合成）</td><td>数据质量四维度 / AI 数据的采样偏差</td><td>Demo 1（数据加载）</td></tr>
+        <tr><td>3.2 DIKW 金字塔</td><td>Rowley 2007 DIKW 批评 / 可视化在 DIKW 中的位置</td><td>Demo 2（DIKW）</td></tr>
+        <tr><td>3.3 数据属性（3 大类）</td><td>Stevens 测量尺度 / Mackinlay 1986 视觉通道排序</td><td>Demo 3（属性 × 通道）</td></tr>
+        <tr><td>3.4 数据变换 8 函数</td><td>函数式数据流 / 不可变性 / 并行化</td><td>Demo 4（8 函数）</td></tr>
+        <tr><td>3.5.1 D3 数据选择器</td><td>Data-Join / enter-update-exit / 声明式绑定</td><td>Demo 5（selection）</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note">
+    <strong>约定：</strong>本工程<strong>零依赖</strong>——D3.js v7 使用仓库内的本地文件，
+    课程数据随页面内嵌；无 <code>npm install</code>、不连 CDN，
+    双击 HTML 即可离线运行。
+  </div>
+</body>
+</html>
