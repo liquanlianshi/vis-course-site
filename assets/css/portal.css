@@ -242,7 +242,11 @@ main.portal-main {
   margin: 0 auto;
   padding: clamp(28px, 4vw, 48px) var(--sp-5) 40px;
 }
-.section { margin-bottom: clamp(48px, 6vw, 76px); }
+.section {
+  margin-bottom: clamp(48px, 6vw, 76px);
+  /* 顶部导航是 sticky 的：锚点跳转时给标题留出空间，别被盖住 */
+  scroll-margin-top: 84px;
+}
 .section-eyebrow {
   display: inline-flex;
   align-items: center;
