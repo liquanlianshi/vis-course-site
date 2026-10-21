@@ -6,8 +6,6 @@
 重构目标：**让内容展现更清晰、更适合学习**，并补齐原站在工程与可用性上的缺陷。
 技术栈：纯 HTML + CSS + 原生 JavaScript + 本地 D3.js v7，无任何运行时依赖。
 
-> 在线预览：<https://liquanlianshi.github.io/vis-course-site/>
->
 > **双击 `index.html` 即可完整浏览**：入口脚本与课程数据已经打包成经典脚本，
 > 不再依赖本地服务器或 `file://` 下会被拦截的 ES modules / fetch。
 
